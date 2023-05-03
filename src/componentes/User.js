@@ -1,18 +1,33 @@
-export default function User() {
+import { useState } from 'react';
 
-    // const showAlert = (nome) => {
-    //      nome = prompt("Qual o seu nome?");
-    //   }
+export default function User() {
+    const [nomeUsuario, setNomeUsuario] = useState('editar user');
+    const [imagemUsuario, setImagemUsuario] = useState('catanacomics')
+
+    const handleNomeUsuario = () => {
+        setNomeUsuario(prompt("Qual o seu nome?"));
+    }
+
+    const handleImagemUsuario = () => {
+        setImagemUsuario(prompt("Link da imagem"))
+    }
 
     return (
         <div className="usuario">
-            <img src="assets/img/catanacomics.svg" alt="imagem de perfil" />
+            <img
+                src={imagemUsuario === '' ? handleImagemUsuario() :`assets/img/${imagemUsuario}.svg`}
+                alt="imagem de perfil"
+                onClick={handleImagemUsuario}
+                data-test="profile-image"
+            />
             <div className="texto">
                 <span>
-                    <strong>'</strong>
-                    <ion-icon 
-                    name="pencil"
-                    onClick={() => ''}>
+                    <strong data-test="name">{nomeUsuario === '' ? handleNomeUsuario() : nomeUsuario}</strong>
+                    <ion-icon
+                        name="pencil"
+                        onClick={handleNomeUsuario}
+                        data-test="edit-name"
+                    >
                     </ion-icon>
                 </span>
             </div>
