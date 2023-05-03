@@ -28,25 +28,25 @@ export default function Stories() {
     ]
 
     return (
-        <div class="stories">
+        <div className="stories">
 
-            {objStory.map((item) => {
+            {objStory.map((item, index) => {
                 return (
-                    <div class="story">
-                        <div class="imagem">
+                    <div className="story" key={index}>
+                        <div className="imagem">
                             <img
                                 src={`assets/img/${item.nome}.svg`}
                                 alt={`${item.nome}`}
                             />
                         </div>
-                        <div class="usuario">
+                        <div className="usuario">
                             {item.nome}
                         </div>
                     </div>
                 )
             })}
 
-            <div class="setinha">
+            <div className="setinha">
                 <ion-icon name="chevron-forward-circle"></ion-icon>
             </div>
         </div>

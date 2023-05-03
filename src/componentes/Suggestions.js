@@ -19,31 +19,29 @@ export default function Suggestions() {
     ]
 
     return (
-        <div class="sugestoes">
-            <div class="titulo">
+        <div className="sugestoes">
+            <div className="titulo">
                 Sugestões para você
                 <div>Ver tudo</div>
             </div>
 
             <ul>
-                {objSugestao.map((item) => {
+                {objSugestao.map((item, index) => {
                     return (
-                        <>
-                            <div class="sugestao">
-                                <div class="usuario">
+                            <div className="sugestao" key={index}>
+                                <div className="usuario">
                                     <img
                                         src={`assets/img/${item.nome}.svg`}
                                         alt={`${item.nome}.svg`}
                                     />
-                                    <div class="texto">
-                                        <div class="nome">{item.nome}</div>
-                                        <div class="razao">Segue você</div>
+                                    <div className="texto">
+                                        <div className="nome">{item.nome}</div>
+                                        <div className="razao">Segue você</div>
                                     </div>
                                 </div>
 
-                                <div class="seguir">Seguir</div>
+                                <div className="seguir">Seguir</div>
                             </div>
-                        </>
                     )
                 })}
             </ul>

@@ -22,34 +22,34 @@ export default function Posts() {
     ]
 
     return (
-        <div class="posts">
+        <div className="posts">
 
 
-            {objPost.map((item) => {
+            {objPost.map((item, index) => {
                 return (
-                    <div class="post">
-                        <div class="topo">
-                            <div class="usuario">
+                    <div className="post" key={index}>
+                        <div className="topo">
+                            <div className="usuario">
                                 <img
                                     src={`assets/img/${item.nome}.svg`}
                                     lt={`${item.nome}`}
                                 />
                                 {item.nome}
                             </div>
-                            <div class="acoes">
+                            <div className="acoes">
                                 <ion-icon name="ellipsis-horizontal"></ion-icon>
                             </div>
                         </div>
 
-                        <div class="conteudo">
+                        <div className="conteudo">
                             <img
                                 src={`assets/img/${item.imagemNome}.svg`}
                                 alt={`${item.imagemNome}`}
                             />
                         </div>
 
-                        <div class="fundo">
-                            <div class="acoes">
+                        <div className="fundo">
+                            <div className="acoes">
                                 <div>
                                     <ion-icon name="heart-outline"></ion-icon>
                                     <ion-icon name="chatbubble-outline"></ion-icon>
@@ -60,12 +60,12 @@ export default function Posts() {
                                 </div>
                             </div>
 
-                            <div class="curtidas">
+                            <div className="curtidas">
                                 <img
                                     src={`assets/img/${item.curtido}.svg`}
                                     alt={`${item.curtido}`}
                                 />
-                                <div class="texto">
+                                <div className="texto">
                                     Curtido por <strong>{item.curtido}</strong> e <strong>outras {item.numeroCurtida} pessoas</strong>
                                 </div>
                             </div>
