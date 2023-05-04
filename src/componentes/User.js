@@ -15,14 +15,14 @@ export default function User() {
     return (
         <div className="usuario">
             <img
-                src={imagemUsuario === '' ? handleImagemUsuario() :`assets/img/${imagemUsuario}.svg`}
+                src={imagemUsuario === '' ? '' :`assets/img/${imagemUsuario}.svg`}
                 alt="imagem de perfil"
                 onClick={handleImagemUsuario}
                 data-test="profile-image"
             />
             <div className="texto">
                 <span>
-                    <strong data-test="name">{nomeUsuario === '' ? handleNomeUsuario() : nomeUsuario}</strong>
+                    <strong data-test="name">{nomeUsuario === '' ? '' : nomeUsuario}</strong>
                     <ion-icon
                         name="pencil"
                         onClick={handleNomeUsuario}

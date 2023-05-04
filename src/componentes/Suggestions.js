@@ -1,50 +1,34 @@
 export default function Suggestions() {
 
-    const objSugestao = [
-        {
-            "nome": 'bad.vibes.memes'
-        },
-        {
-            "nome": 'chibirdart'
-        },
-        {
-            "nome": 'razoesparaacreditar'
-        },
-        {
-            "nome": 'adorable_animals'
-        },
-        {
-            "nome": 'smallcutecats'
-        }
-    ]
-
     return (
         <div className="sugestoes">
             <div className="titulo">
                 Sugestões para você
                 <div>Ver tudo</div>
             </div>
+            <Sugestao nome="bad.vibes.memes" />
+            <Sugestao nome="chibirdart" />
+            <Sugestao nome="razoesparaacreditar" />
+            <Sugestao nome="adorable_animals" />
+            <Sugestao nome="smallcutecats" />
+        </div>
+    )
+}
 
-            <ul>
-                {objSugestao.map((item, index) => {
-                    return (
-                            <div className="sugestao" key={index}>
-                                <div className="usuario">
-                                    <img
-                                        src={`assets/img/${item.nome}.svg`}
-                                        alt={`${item.nome}.svg`}
-                                    />
-                                    <div className="texto">
-                                        <div className="nome">{item.nome}</div>
-                                        <div className="razao">Segue você</div>
-                                    </div>
-                                </div>
-
-                                <div className="seguir">Seguir</div>
-                            </div>
-                    )
-                })}
-            </ul>
+function Sugestao(props) {
+    return (
+        <div className="sugestao">
+            <div className="usuario">
+                <img
+                    src={`assets/img/${props.nome}.svg`}
+                    alt={`${props.nome}.svg`}
+                />
+                <div className="texto">
+                    <div className="nome">{props.nome}</div>
+                    <div className="razao">Segue você</div>
+                </div>
+            </div>
+            <div className="seguir">Seguir</div>
         </div>
     )
 }
