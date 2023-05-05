@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
 export default function Posts() {
 
@@ -122,7 +122,7 @@ function Post(props) {
                     src={props.conteudoImagemSrcArg}
                     alt={props.conteudoImagemAltArg}
                     data-test="post-image"
-                    onClick={clicouNaImagem}
+                    onDoubleClick={clicouNaImagem}
                 />
             </div>
 
