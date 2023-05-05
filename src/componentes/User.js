@@ -4,28 +4,30 @@ export default function User() {
     const [nomeUsuario, setNomeUsuario] = useState('editar user');
     const [imagemUsuario, setImagemUsuario] = useState('catanacomics')
 
-    const handleNomeUsuario = () => {
-        setNomeUsuario(prompt("Qual o seu nome?"));
+    function mudarNomeUsuario() {
+        let novoNome = prompt("Qual o seu nome?")
+        setNomeUsuario(novoNome)
     }
 
-    const handleImagemUsuario = () => {
-        setImagemUsuario(prompt("Link da imagem"))
+    const mudarImagemUsuario = () => {
+       let novaImagem = (prompt("Link da imagem"))
+       setImagemUsuario(novaImagem)
     }
 
     return (
         <div className="usuario">
             <img
-                src={imagemUsuario === '' ? '' :`assets/img/${imagemUsuario}.svg`}
+                src={`assets/img/${imagemUsuario}.svg`}
                 alt="imagem de perfil"
-                onClick={handleImagemUsuario}
+                onClick={mudarImagemUsuario}
                 data-test="profile-image"
             />
             <div className="texto">
                 <span>
-                    <strong data-test="name">{nomeUsuario === '' ? '' : nomeUsuario}</strong>
+                    <strong data-test="name">{nomeUsuario}</strong>
                     <ion-icon
                         name="pencil"
-                        onClick={handleNomeUsuario}
+                        onClick={mudarNomeUsuario}
                         data-test="edit-name"
                     >
                     </ion-icon>
