@@ -144,7 +144,7 @@ function Post(props) {
                         alt={props.curtidasImagemAltArg}
                     />
                     <div className="texto" data-test="likes-number">
-                        Curtido por <strong>{props.curtidasTextoNomeArg}</strong> e <strong>outras {props.curtidasTextoNumeroArg} pessoas</strong>
+                        Curtido por <strong>{props.curtidasTextoNomeArg}</strong> e <strong>outras {count} pessoas</strong>
                     </div>
                 </div>
             </div>
