@@ -41,6 +41,26 @@ export default function Stories() {
             storieImagemSrc: "assets/img/memeriagourmet.svg",
             storieImagemAlt: "memeriagourmet",
         },
+        {
+            storieNome: "9gag",
+            storieImagemSrc: "assets/img/9gag.svg",
+            storieImagemAlt: "9gag",
+        },
+        {
+            storieNome: "meowed",
+            storieImagemSrc: "assets/img/meowed.svg",
+            storieImagemAlt: "meowed",
+        },
+        {
+            storieNome: "barked",
+            storieImagemSrc: "assets/img/barked.svg",
+            storieImagemAlt: "barked",
+        },
+        {
+            storieNome: "nathanwpylestrangeplanet",
+            storieImagemSrc: "assets/img/nathanwpylestrangeplanet.svg",
+            storieImagemAlt: "nathanwpylestrangeplanet",
+        },
 
     ]
 
