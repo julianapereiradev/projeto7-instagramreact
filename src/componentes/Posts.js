@@ -1,11 +1,66 @@
 export default function Posts() {
 
+    const posts = [
+        {
+            usuarioNome: "meowed",
+            usuarioImagemSrc: "assets/img/meowed.svg",
+            usuarioImagemAlt: "meowed",
+            conteudoImagemSrc: "assets/img/gato-telefone.svg",
+            conteudoImagemAlt: "gato-telefone",
+            curtidasImagemSrc: "assets/img/respondeai.svg",
+            curtidasImagemAlt: "respondeai",
+            curtidasTextoNome: "respondeai",
+            curtidasTextoNumero: "101.523",
+        },
+        {
+            usuarioNome: "barked",
+            usuarioImagemSrc: "assets/img/barked.svg",
+            usuarioImagemAlt: "barked",
+            conteudoImagemSrc: "assets/img/dog.svg",
+            conteudoImagemAlt: "dog",
+            curtidasImagemSrc: "assets/img/adorable_animals.svg",
+            curtidasImagemAlt: "adorable_animals",
+            curtidasTextoNome: "adorable_animals",
+            curtidasTextoNumero: "99.159",
+        },
+        {
+            usuarioNome: "meowed",
+            usuarioImagemSrc: "assets/img/meowed.svg",
+            usuarioImagemAlt: "meowed",
+            conteudoImagemSrc: "assets/img/gato-telefone.svg",
+            conteudoImagemAlt: "gato-telefone",
+            curtidasImagemSrc: "assets/img/9gag.svg",
+            curtidasImagemAlt: "9gag",
+            curtidasTextoNome: "9gag",
+            curtidasTextoNumero: "10.127",
+        },
+        {
+            usuarioNome: "barked",
+            usuarioImagemSrc: "assets/img/barked.svg",
+            usuarioImagemAlt: "barked",
+            conteudoImagemSrc: "assets/img/dog.svg",
+            conteudoImagemAlt: "dog",
+            curtidasImagemSrc: "assets/img/filomoderna.svg",
+            curtidasImagemAlt: "filomoderna",
+            curtidasTextoNome: "filomoderna",
+            curtidasTextoNumero: "37.876",
+        },
+    ]
+
     return (
         <div className="posts">
-            <Post nome="meowed" imagemNome="gato-telefone" curtido="respondeai" numeroCurtida="101.523"/>
-            <Post nome="barked" imagemNome="dog" curtido="adorable_animals" numeroCurtida="99.159"/>
-            <Post nome="meowed" imagemNome="gato-telefone" curtido="9gag" numeroCurtida="10.127"/>
-            <Post nome="barked" imagemNome="dog" curtido="filomoderna" numeroCurtida="37.876"/>
+            {posts.map((post) =>
+                <Post
+                    usuarioNomeArg={post.usuarioNome}
+                    usuarioImagemSrcArg={post.usuarioImagemSrc}
+                    usuarioImagemAltArg={post.usuarioImagemAlt}
+                    conteudoImagemSrcArg={post.conteudoImagemSrc}
+                    conteudoImagemAltArg={post.conteudoImagemAlt}
+                    curtidasImagemSrcArg={post.curtidasImagemSrc}
+                    curtidasImagemAltArg={post.curtidasImagemAlt}
+                    curtidasTextoNomeArg={post.curtidasTextoNome}
+                    curtidasTextoNumeroArg={post.curtidasTextoNumero} />
+            )}
         </div>
     )
 }
@@ -16,10 +71,10 @@ function Post(props) {
             <div className="topo">
                 <div className="usuario">
                     <img
-                        src={`assets/img/${props.nome}.svg`}
-                        alt={`${props.nome}`}
+                        src={props.usuarioImagemSrcArg}
+                        alt={props.usuarioImagemAltArg}
                     />
-                    {props.nome}
+                    {props.usuarioNomeArg}
                 </div>
                 <div className="acoes">
                     <ion-icon name="ellipsis-horizontal"></ion-icon>
@@ -28,8 +83,8 @@ function Post(props) {
 
             <div className="conteudo">
                 <img
-                    src={`assets/img/${props.imagemNome}.svg`}
-                    alt={`${props.imagemNome}`}
+                    src={props.conteudoImagemSrcArg}
+                    alt={props.conteudoImagemAltArg}
                 />
             </div>
 
@@ -47,11 +102,11 @@ function Post(props) {
 
                 <div className="curtidas">
                     <img
-                        src={`assets/img/${props.curtido}.svg`}
-                        alt={`${props.curtido}`}
+                        src={props.curtidasImagemSrcArg}
+                        alt={props.curtidasImagemAltArg}
                     />
                     <div className="texto">
-                        Curtido por <strong>{props.curtido}</strong> e <strong>outras {props.numeroCurtida} pessoas</strong>
+                        Curtido por <strong>{props.curtidasTextoNomeArg}</strong> e <strong>outras {props.curtidasTextoNumeroArg} pessoas</strong>
                     </div>
                 </div>
             </div>
