@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export default function Posts() {
 
@@ -12,7 +12,7 @@ export default function Posts() {
             curtidasImagemSrc: "assets/img/respondeai.svg",
             curtidasImagemAlt: "respondeai",
             curtidasTextoNome: "respondeai",
-            curtidasTextoNumero: "101.523",
+            curtidasTextoNumero: 101.523,
         },
         {
             usuarioNome: "barked",
@@ -23,7 +23,7 @@ export default function Posts() {
             curtidasImagemSrc: "assets/img/adorable_animals.svg",
             curtidasImagemAlt: "adorable_animals",
             curtidasTextoNome: "adorable_animals",
-            curtidasTextoNumero: "99.159",
+            curtidasTextoNumero: 99.159,
         },
         {
             usuarioNome: "meowed",
@@ -34,7 +34,7 @@ export default function Posts() {
             curtidasImagemSrc: "assets/img/9gag.svg",
             curtidasImagemAlt: "9gag",
             curtidasTextoNome: "9gag",
-            curtidasTextoNumero: "10.127",
+            curtidasTextoNumero: 10.127,
         },
         {
             usuarioNome: "barked",
@@ -45,7 +45,7 @@ export default function Posts() {
             curtidasImagemSrc: "assets/img/filomoderna.svg",
             curtidasImagemAlt: "filomoderna",
             curtidasTextoNome: "filomoderna",
-            curtidasTextoNumero: "37.876",
+            curtidasTextoNumero: 37.876,
         },
     ]
 
@@ -72,6 +72,7 @@ function Post(props) {
     let [classeBotao, setClasseBotao] = useState('bookmark-outline')
     let [classeNameHeart, setClasseNameHeart] = useState('heart-outline')
     let [classeNameHeartColor, setClasseNameHeartColor] = useState('')
+    let [count, setCount] = useState(0)
 
     function trocarPreenchBotaoSalvar() {
         if (classeBotao === 'bookmark-outline') {
@@ -83,17 +84,22 @@ function Post(props) {
     }
 
     function trocarCorHeart() {
-        if(classeNameHeart === 'heart-outline') {
+        if (classeNameHeart === 'heart-outline') {
             setClasseNameHeart('heart')
             setClasseNameHeartColor('vermelho')
+            setCount(count + 1)       
         } else {
             setClasseNameHeart('heart-outline')
+            setCount(count - 1)
         }
     }
+
 
     function clicouNaImagem() {
         setClasseNameHeart('heart')
         setClasseNameHeartColor('vermelho')
+        setCount(count + 1)
+
     }
 
     return (
