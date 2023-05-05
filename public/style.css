@@ -305,3 +305,10 @@ ion-icon {
   color: black;
 }
 
+.vermelho {
+  fill: rgb(255, 0, 0);
+}
+
+.branco {
+  fill: transparent
+}

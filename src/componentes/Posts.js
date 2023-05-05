@@ -70,15 +70,26 @@ export default function Posts() {
 function Post(props) {
 
     let [classeBotao, setClasseBotao] = useState('bookmark-outline')
+    let [classeNameHeart, setClasseNameHeart] = useState('heart-outline')
+    let [classeNameHeartColor, setClasseNameHeartColor] = useState('')
 
-    function trocarCor() {
+    function trocarPreenchBotaoSalvar() {
         if (classeBotao === 'bookmark-outline') {
             setClasseBotao('bookmark')
+
         } else {
             setClasseBotao('bookmark-outline')
         }
     }
 
+    function trocarCorHeart() {
+        if(classeNameHeart === 'heart-outline') {
+            setClasseNameHeart('heart')
+            setClasseNameHeartColor('vermelho')
+        } else {
+            setClasseNameHeart('heart-outline')
+        }
+    }
 
     return (
         <div className="post" data-test="post">
@@ -106,12 +117,12 @@ function Post(props) {
             <div className="fundo">
                 <div className="acoes">
                     <div>
-                        <ion-icon name="heart-outline" data-test="like-post"></ion-icon>
+                        <ion-icon name={classeNameHeart} class={classeNameHeartColor} onClick={trocarCorHeart} data-test="like-post"></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
                     <div>
-                        <ion-icon name={classeBotao} onClick={trocarCor} data-test="save-post"></ion-icon>
+                        <ion-icon name={classeBotao} onClick={trocarPreenchBotaoSalvar} data-test="save-post"></ion-icon>
                     </div>
                 </div>
 
