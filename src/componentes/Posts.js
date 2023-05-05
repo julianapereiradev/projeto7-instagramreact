@@ -96,10 +96,11 @@ function Post(props) {
 
 
     function clicouNaImagem() {
+        if(classeNameHeart === 'heart-outline') {
         setClasseNameHeart('heart')
         setClasseNameHeartColor('vermelho')
         setCount(count + 1)
-
+        }
     }
 
     return (
