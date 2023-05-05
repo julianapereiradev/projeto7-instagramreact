@@ -91,6 +91,11 @@ function Post(props) {
         }
     }
 
+    function clicouNaImagem() {
+        setClasseNameHeart('heart')
+        setClasseNameHeartColor('vermelho')
+    }
+
     return (
         <div className="post" data-test="post">
             <div className="topo">
@@ -111,6 +116,7 @@ function Post(props) {
                     src={props.conteudoImagemSrcArg}
                     alt={props.conteudoImagemAltArg}
                     data-test="post-image"
+                    onClick={clicouNaImagem}
                 />
             </div>
 
