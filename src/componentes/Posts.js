@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 export default function Posts() {
 
     const posts = [
@@ -66,6 +68,18 @@ export default function Posts() {
 }
 
 function Post(props) {
+
+    let [classeBotao, setClasseBotao] = useState('bookmark-outline')
+
+    function trocarCor() {
+        if (classeBotao === 'bookmark-outline') {
+            setClasseBotao('bookmark')
+        } else {
+            setClasseBotao('bookmark-outline')
+        }
+    }
+
+
     return (
         <div className="post">
             <div className="topo">
@@ -96,7 +110,7 @@ function Post(props) {
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
                     <div>
-                        <ion-icon name="bookmark-outline"></ion-icon>
+                        <ion-icon name={classeBotao} onClick={trocarCor}></ion-icon>
                     </div>
                 </div>
 
