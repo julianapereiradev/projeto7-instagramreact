@@ -2,22 +2,28 @@ import { useState } from 'react';
 
 export default function User() {
     const [nomeUsuario, setNomeUsuario] = useState('editar user');
-    const [imagemUsuario, setImagemUsuario] = useState('catanacomics')
+    const [imagemUsuario, setImagemUsuario] = useState('assets/img/catanacomics.svg')
 
     function mudarNomeUsuario() {
         let novoNome = prompt("Qual o seu nome?")
-        setNomeUsuario(novoNome)
+
+        if(novoNome !== '') {
+            setNomeUsuario(novoNome)
+        }
     }
 
     const mudarImagemUsuario = () => {
-       let novaImagem = (prompt("Link da imagem"))
-       setImagemUsuario(novaImagem)
+        let novaImagem = (prompt("Qual a nova URL?"))
+
+        if(novaImagem !== '') {
+             setImagemUsuario(novaImagem)
+        }
     }
 
     return (
         <div className="usuario">
             <img
-                src={`assets/img/${imagemUsuario}.svg`}
+                src={imagemUsuario}
                 alt="imagem de perfil"
                 onClick={mudarImagemUsuario}
                 data-test="profile-image"
