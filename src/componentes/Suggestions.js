@@ -4,27 +4,27 @@ export default function Suggestions() {
         {
             sugestaoUsuarioNome: "bad.vibes.memes",
             sugestaoUsuarioImagemSrc: "assets/img/bad.vibes.memes.svg",
-            sugestaoUsuarioImagemAlt: "bad.vibes.memes",
+            sugestaoUsuarioImagemAlt: "bad.vibes.memesAlt",
         },
         {
             sugestaoUsuarioNome: "chibirdart",
             sugestaoUsuarioImagemSrc: "assets/img/chibirdart.svg",
-            sugestaoUsuarioImagemAlt: "chibirdart",
+            sugestaoUsuarioImagemAlt: "chibirdartAlt",
         },
         {
             sugestaoUsuarioNome: "razoesparaacreditar",
             sugestaoUsuarioImagemSrc: "assets/img/razoesparaacreditar.svg",
-            sugestaoUsuarioImagemAlt: "razoesparaacreditar",
+            sugestaoUsuarioImagemAlt: "razoesparaacreditarAlt",
         },
         {
             sugestaoUsuarioNome: "adorable_animals",
             sugestaoUsuarioImagemSrc: "assets/img/adorable_animals.svg",
-            sugestaoUsuarioImagemAlt: "adorable_animals",
+            sugestaoUsuarioImagemAlt: "adorable_animalsAlt",
         },
         {
             sugestaoUsuarioNome: "smallcutecats",
             sugestaoUsuarioImagemSrc: "assets/img/smallcutecats.svg",
-            sugestaoUsuarioImagemAlt: "smallcutecats",
+            sugestaoUsuarioImagemAlt: "smallcutecatsAlt",
         },
         
     ]
@@ -36,11 +36,12 @@ export default function Suggestions() {
                 <div>Ver tudo</div>
             </div>
 
-            {suggestions.map((storie) =>
+            {suggestions.map((suggestion) =>
                 <Sugestao
-                sugestaoUsuarioNomeArg={storie.sugestaoUsuarioNome}
-                sugestaoUsuarioImagemSrcArg={storie.sugestaoUsuarioImagemSrc}
-                sugestaoUsuarioImagemAltArg={storie.sugestaoUsuarioImagemAlt} />
+                key={suggestion.sugestaoUsuarioImagemAlt}
+                sugestaoUsuarioNomeArg={suggestion.sugestaoUsuarioNome}
+                sugestaoUsuarioImagemSrcArg={suggestion.sugestaoUsuarioImagemSrc}
+                sugestaoUsuarioImagemAltArg={suggestion.sugestaoUsuarioImagemAlt} />
             )}
 
         </div>

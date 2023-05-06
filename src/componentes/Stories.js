@@ -4,62 +4,62 @@ export default function Stories() {
         {
             storieNome: "9gag",
             storieImagemSrc: "assets/img/9gag.svg",
-            storieImagemAlt: "9gag",
+            storieImagemAlt: "9gagAlt",
         },
         {
             storieNome: "meowed",
             storieImagemSrc: "assets/img/meowed.svg",
-            storieImagemAlt: "meowed",
+            storieImagemAlt: "meowedAlt",
         },
         {
             storieNome: "barked",
             storieImagemSrc: "assets/img/barked.svg",
-            storieImagemAlt: "barked",
+            storieImagemAlt: "barkedAlt",
         },
         {
             storieNome: "nathanwpylestrangeplanet",
             storieImagemSrc: "assets/img/nathanwpylestrangeplanet.svg",
-            storieImagemAlt: "nathanwpylestrangeplanet",
+            storieImagemAlt: "nathanwpylestrangeplanetAlt",
         },
         {
             storieNome: "wawawicomics",
             storieImagemSrc: "assets/img/wawawicomics.svg",
-            storieImagemAlt: "wawawicomics",
+            storieImagemAlt: "wawawicomicsAlt",
         },
         {
             storieNome: "respondeai",
             storieImagemSrc: "assets/img/respondeai.svg",
-            storieImagemAlt: "respondeai",
+            storieImagemAlt: "respondeaiAlt",
         },
         {
             storieNome: "filomoderna",
             storieImagemSrc: "assets/img/filomoderna.svg",
-            storieImagemAlt: "filomoderna",
+            storieImagemAlt: "filomodernaAlt",
         },
         {
             storieNome: "memeriagourmet",
             storieImagemSrc: "assets/img/memeriagourmet.svg",
-            storieImagemAlt: "memeriagourmet",
+            storieImagemAlt: "memeriagourmetAlt",
         },
         {
             storieNome: "9gag",
             storieImagemSrc: "assets/img/9gag.svg",
-            storieImagemAlt: "9gag",
+            storieImagemAlt: "9gagAlt1",
         },
         {
             storieNome: "meowed",
             storieImagemSrc: "assets/img/meowed.svg",
-            storieImagemAlt: "meowed",
+            storieImagemAlt: "meowedAlt1",
         },
         {
             storieNome: "barked",
             storieImagemSrc: "assets/img/barked.svg",
-            storieImagemAlt: "barked",
+            storieImagemAlt: "barkedAlt1",
         },
         {
             storieNome: "nathanwpylestrangeplanet",
             storieImagemSrc: "assets/img/nathanwpylestrangeplanet.svg",
-            storieImagemAlt: "nathanwpylestrangeplanet",
+            storieImagemAlt: "nathanwpylestrangeplanetAlt1",
         },
 
     ]
@@ -68,6 +68,7 @@ export default function Stories() {
         <div className="stories">
             {stories.map((storie) =>
                 <Storie
+                key={storie.storieImagemAlt}
                 storieNomeArg={storie.storieNome}
                 storieImagemSrcArg={storie.storieImagemSrc}
                 storieImagemAltArg={storie.storieImagemAlt} />

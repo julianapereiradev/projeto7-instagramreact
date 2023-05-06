@@ -53,6 +53,7 @@ export default function Posts() {
         <div className="posts">
             {posts.map((post) =>
                 <Post
+                    key={post.curtidasTextoNumero}
                     usuarioNomeArg={post.usuarioNome}
                     usuarioImagemSrcArg={post.usuarioImagemSrc}
                     usuarioImagemAltArg={post.usuarioImagemAlt}
